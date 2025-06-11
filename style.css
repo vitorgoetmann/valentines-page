@@ -1,0 +1,433 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(135deg, #fff5f5, #ffe6e6);
+    color: #d23c77;
+    overflow-x: hidden;
+    min-height: 100vh;
+    position: relative;
+}
+
+.hearts-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.heart {
+    position: absolute;
+    background-color: #ff6b8b;
+    opacity: 0.6;
+    animation: float 15s linear infinite;
+}
+
+.heart:before, .heart:after {
+    content: "";
+    background-color: inherit;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.heart:before {
+    width: 100%;
+    height: 100%;
+    top: -50%;
+    left: 0;
+}
+
+.heart:after {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 50%;
+}
+
+.heart-1 {
+    width: 20px;
+    height: 20px;
+    top: 10%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.heart-2 {
+    width: 30px;
+    height: 30px;
+    top: 20%;
+    left: 80%;
+    animation-delay: 2s;
+    background-color: #ff8fab;
+}
+
+.heart-3 {
+    width: 25px;
+    height: 25px;
+    top: 60%;
+    left: 15%;
+    animation-delay: 4s;
+    background-color: #ffb3c6;
+}
+
+.heart-4 {
+    width: 15px;
+    height: 15px;
+    top: 30%;
+    left: 50%;
+    animation-delay: 6s;
+    background-color: #ffcad4;
+}
+
+.heart-5 {
+    width: 35px;
+    height: 35px;
+    top: 70%;
+    left: 70%;
+    animation-delay: 8s;
+    background-color: #ff758f;
+}
+
+.heart-6 {
+    width: 18px;
+    height: 18px;
+    top: 80%;
+    left: 30%;
+    animation-delay: 10s;
+    background-color: #ff8fa3;
+}
+
+.heart-7 {
+    width: 22px;
+    height: 22px;
+    top: 40%;
+    left: 25%;
+    animation-delay: 12s;
+    background-color: #ffb3c1;
+}
+
+.heart-8 {
+    width: 28px;
+    height: 28px;
+    top: 50%;
+    left: 60%;
+    animation-delay: 14s;
+    background-color: #ff8fab;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0.6;
+    }
+    50% {
+        opacity: 0.9;
+    }
+    100% {
+        transform: translateY(-100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.rose-container {
+    margin: 30px auto;
+    width: 150px;
+    height: 250px;
+    position: relative;
+    animation: pulse 2s infinite alternate;
+}
+
+.rose {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.petals {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #e91e63;
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    box-shadow: 
+        0 0 0 10px rgba(233, 30, 99, 0.3),
+        0 0 0 20px rgba(233, 30, 99, 0.2),
+        0 0 0 30px rgba(233, 30, 99, 0.1);
+    animation: bloom 3s forwards, sway 5s infinite ease-in-out;
+    transform-origin: bottom center;
+}
+
+@keyframes bloom {
+    0% {
+        transform: translateX(-50%) scale(0.1);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(-50%) scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes sway {
+    0%, 100% {
+        transform: translateX(-50%) rotate(-5deg);
+    }
+    50% {
+        transform: translateX(-50%) rotate(5deg);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.05);
+    }
+}
+
+.stem {
+    position: absolute;
+    width: 8px;
+    height: 150px;
+    background-color: #4caf50;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+}
+
+.leaf {
+    position: absolute;
+    width: 40px;
+    height: 20px;
+    background-color: #4caf50;
+    border-radius: 50% 0 50% 0;
+    z-index: -1;
+}
+
+.leaf-1 {
+    top: 120px;
+    left: 55%;
+    transform: rotate(-30deg);
+}
+
+.leaf-2 {
+    top: 160px;
+    left: 45%;
+    transform: rotate(30deg);
+}
+
+.title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3.5rem;
+    color: #d23c77;
+    margin: 20px 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 2s ease-in-out;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #e91e63;
+    margin-bottom: 30px;
+    animation: fadeIn 2s ease-in-out 0.5s forwards;
+    opacity: 0;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.photo-slider {
+    margin: 40px auto;
+    max-width: 600px;
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in-out 1s forwards;
+    opacity: 0;
+}
+
+.slider-container {
+    position: relative;
+    height: 400px;
+    background: linear-gradient(45deg, #ffcdd2, #f8bbd0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slide img {
+    max-width: 90%;
+    max-height: 80%;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    border: 5px solid white;
+}
+
+.slide-caption {
+    margin-top: 15px;
+    font-size: 1.2rem;
+    color: #d23c77;
+    font-weight: 600;
+}
+
+.slider-controls {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.slider-controls button {
+    background-color: rgba(255, 255, 255, 0.7);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    color: #d23c77;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.slider-controls button:hover {
+    background-color: #d23c77;
+    color: white;
+    transform: scale(1.1);
+}
+
+.message-container {
+    background-color: white;
+    border-radius: 15px;
+    padding: 30px;
+    margin: 40px 0;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in-out 1.5s forwards;
+    opacity: 0;
+    text-align: left;
+}
+
+.message-container h2 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem;
+    color: #d23c77;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.message p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+    color: #555;
+}
+
+.signature {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.5rem;
+    color: #d23c77;
+    margin-top: 30px;
+    text-align: right;
+}
+
+.footer {
+    margin-top: 50px;
+    padding: 20px;
+    color: #d23c77;
+    font-size: 0.9rem;
+    animation: fadeIn 1s ease-in-out 2s forwards;
+    opacity: 0;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .title {
+        font-size: 2.5rem;
+    }
+    
+    .subtitle {
+        font-size: 1rem;
+    }
+    
+    .photo-slider {
+        height: 300px;
+    }
+    
+    .message-container {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .rose-container {
+        width: 120px;
+        height: 200px;
+    }
+    
+    .petals {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .stem {
+        height: 120px;
+    }
+    
+    .title {
+        font-size: 2rem;
+    }
+    
+    .photo-slider {
+        height: 250px;
+    }
+}
