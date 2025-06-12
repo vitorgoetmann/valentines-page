@@ -4,6 +4,50 @@ document.addEventListener('DOMContentLoaded', function() {
     const prevBtn = document.querySelector('.prev');
     const nextBtn = document.querySelector('.next');
     let currentSlide = 0;
+    let slideInterval;
+    
+    // Função para mostrar slide
+    function showSlide(n) {
+        slides.forEach(slide => slide.classList.remove('active'));
+        currentSlide = (n + slides.length) % slides.length;
+        slides[currentSlide].classList.add('active');
+    }
+    
+    // Event listeners para os botões
+    prevBtn.addEventListener('click', () => {
+        resetInterval();
+        showSlide(currentSlide - 1);
+    });
+    
+    nextBtn.addEventListener('click', () => {
+        resetInterval();
+        showSlide(currentSlide + 1);
+    });
+    
+    // Auto-avanço dos slides
+    function startSlideShow() {
+        slideInterval = setInterval(() => {
+            showSlide(currentSlide + 1);
+        }, 5000); // Muda a cada 5 segundos
+    }
+    
+    function resetInterval() {
+        clearInterval(slideInterval);
+        startSlideShow();
+    }
+    
+    // Inicia com o primeiro slide visível e inicia o slideshow
+    showSlide(0);
+    startSlideShow();
+    
+    // ... (mantenha o restante do código existente) ...
+});
+document.addEventListener('DOMContentLoaded', function() {
+    // Configuração do slider de fotos
+    const slides = document.querySelectorAll('.slide');
+    const prevBtn = document.querySelector('.prev');
+    const nextBtn = document.querySelector('.next');
+    let currentSlide = 0;
     
     // Inicializa o slider
     function showSlide(n) {
